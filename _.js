@@ -88,7 +88,18 @@ let _ = {
         }
     
         return undefined
-      }
+      },
+      drop(arr, n=1){
+        return arr.slice(n)
+      },
+      dropWhile(arr, predicateFunc){
+        let dropNumber = arr.findIndex((item, idx) => {
+          predicateFunc((item, idx, arr) => !item)
+        })
+        let droppedArray = this.drop(dropNumber)
+    
+        return droppedArray
+      },
 }
 
 
