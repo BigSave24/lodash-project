@@ -75,6 +75,19 @@ let _ = {
         }
     
         return newObj
+      },
+      findKey(obj, predicateFunc){
+    
+        for(key in obj){
+          let val = obj[key]
+          let predicateReturnValue = predicateFunc(val)
+    
+          if(predicateReturnValue === true){
+            return key
+          }
+        }
+    
+        return undefined
       }
 }
 
@@ -93,5 +106,5 @@ let _ = {
 
 
 
-// Do not write or modify code below this line.
+// Do not write or modify code
 module.exports = _;
