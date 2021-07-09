@@ -100,6 +100,15 @@ let _ = {
     
         return droppedArray
       },
+      chunk(arr, size = 1){
+        let result = []
+    
+        for(let i = 0; i < arr.length; i+size){
+          result.push(arr.slice(i, i + size))
+        }
+    
+        return result
+      }
 }
 
 
