@@ -56,8 +56,26 @@ let _ = {
 
             return result
         }
-    }
-
+    },
+    has(obj, key){
+    
+        if(obj.prototype.valueOf(key) == undefined){
+          return false
+        } else {
+          return true
+        }
+      },
+      invert(obj){
+        let newObj = {}
+    
+        for(prop in obj){
+          if(!newObj.hasOwnProperty(prop)){
+            newObj[obj[prop]] = prop
+          }
+        }
+    
+        return newObj
+      }
 }
 
 
